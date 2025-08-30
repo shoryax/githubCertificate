@@ -95,6 +95,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
           ))}
         </div>
 
+        
         {project.description && (
           <p className="text-sm text-white/60 mb-4">{project.description}</p>
         )}
