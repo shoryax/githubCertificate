@@ -28,8 +28,7 @@ const Time: React.FC = () => {
     return (
         <div className="">
             <hr
-                className="mx-auto my-2 w-[71%] flex justify-center"
-                style={{ color: "#684574" }}
+                className="mx-auto my-2 w-[71%] h-[0.650px] bg-[#343643] border-0"
             />
             <div className="w-[73%] mx-auto mt-2 mb-5 rounded-2xl transition-colors px-3 flex items-center justify-center">
                 <div className="relative w-full flex items-center justify-between py-4">
@@ -38,13 +37,13 @@ const Time: React.FC = () => {
                     </div>
 
                     <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex">
-                        <div>
+                        <div className="w-[70%] h-[70%]">
                             <img src="/star.svg" alt="" loading="lazy" />
                         </div>
                     </div>
 
-                    <div className="text-center font-sm text-base text-white/80 font-[Satoshi] flex items-center gap-2">
-                        <img className="w-[11%] h-[11%]" src="/locat.svg" alt="Location Icon" loading="lazy" />
+                    <div className="text-center font-sm text-base font-[Satoshi] flex items-center gap-2" style={{ color: "gray" }} >
+                        <img className="w-[10%] h-[12%]" src="/locat.svg" alt="Location Icon" loading="lazy" />
                         Patna, India
                         <div className="gap-3">{timeIST}</div>
                     </div>

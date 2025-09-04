@@ -43,7 +43,9 @@ export default function Intro() {
         </div>
       </div>
 
-      <hr className="mx-auto w-[78%] my-2" style={{ color: '#684574' }} />
+      <hr
+        className="mx-auto my-2 w-[78%] h-[0.250px] bg-[#343643] border-0"
+      />
     </div>
   );
 }

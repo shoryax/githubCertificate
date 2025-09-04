@@ -2,9 +2,10 @@ const Footer: React.FC = () => {
   return (
     <div id="contact">
       <footer className="text-white py-5 relative" style={{ overflow: "hidden" }}>
-        <hr className="border-t mx-auto w-[70%] mb-7" style={{ color: "#684574" }} />
-
-        <div className="text-center font-semibold text-xl mb-2 text-white/70">Let's get in touch</div>
+        <hr
+          className="mx-auto my-2 w-[71%] h-[0.650px] bg-[#343643] border-0"
+        />
+        <div className="text-center font-semibold text-xl mb-2 my-4 text-white/70">Let's get in touch</div>
 
         <div className="text-center text-sm text-[#BABABA] w-[75%] mx-auto mb-4">
           Feel free to send me a message using the form
@@ -12,7 +13,6 @@ const Footer: React.FC = () => {
           <span className="text-[#346444] font-medium">shoryavardhan13@gmail.com</span>
         </div>
 
-        {/* Form */}
         <form className="w-full max-w-xl mx-auto space-y-4 px-4">
           <div className="flex gap-4">
             <div className="flex-1">
