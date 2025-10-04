@@ -58,7 +58,7 @@ export default function Header() {
               <img src="/linkedin.svg" alt="LinkedIn" className="w-8 h-8" />
             </a>
             <a href="https://www.x.com/in/realShorya/" target="_blank" rel="noopener noreferrer">
-              <img src="/x.svg" alt="X" className="w-8 h-8" />
+              <img src="/bi_twitter-x.svg" alt="X" className="w-8 h-8" />
             </a>
           </div>
         </div>
