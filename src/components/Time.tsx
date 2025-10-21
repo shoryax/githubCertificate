@@ -33,7 +33,7 @@ const Time: React.FC = () => {
             <div className="w-[73%] mx-auto mt-2 mb-5 rounded-2xl transition-colors px-3 flex items-center justify-center">
                 <div className="relative w-full flex items-center justify-between py-4">
                     <div className="text text-sm" style={{ color: "gray" }}>
-                        © {new Date().getFullYear()} • Shorya Vardhan
+                        © {new Date().getFullYear()} / Shorya Vardhan
                     </div>
 
                     <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex">

@@ -1,11 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import Model from "./3d";  // Adjust path if needed
+import Model from "./3d";
+import { NavItem } from "@/components/NavItem";
+import { Home, User2, Grid2x2, ImageIcon } from "lucide-react";
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { cn } from "@/lib/utils"
 
+interface NavItemProps {
+  href: string
+  label: string
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  active?: boolean
+}
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showModel, setShowModel] = useState(false);
+  const pathname = usePathname();
+  
 
   return (
     <header className="w-[85%] h-[85%] mx-auto mt-8 mb-15 rounded-2xl transition-colors px-3 flex flex-col items-center justify-center">
@@ -18,10 +31,22 @@ export default function Header() {
         </div>
 
         <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex">
-          <nav className="flex space-x-10">
-            <a href="/" className="cursor-pointer text-white/70">About</a>
-            <a href="/" className="cursor-pointer text-white/70">Home</a>
-            <a href="#contact" className="cursor-pointer text-white/70">Contact</a>
+          <nav
+            aria-label="Main"
+            className="pointer-events-auto rounded-full border border-border/60 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm"
+          >
+            <ul className="flex items-center gap-1 px-3 py-2">
+              <NavItem href="/" label="Home" icon={Home} active={pathname === "/"} />
+
+              {/* vertical divider */}
+              <li aria-hidden="true">
+                <div className="mx-2 h-6 w-px bg-border/60" />
+              </li>
+
+              <NavItem href="/about" label="About" icon={User2} active={pathname === "/about"} />
+              <NavItem href="/work" label="Work" icon={Grid2x2} active={pathname === "/work"} />
+              <NavItem href="/gallery" label="Gallery" icon={ImageIcon} active={pathname === "/gallery"} />
+            </ul>
           </nav>
         </div>
 
