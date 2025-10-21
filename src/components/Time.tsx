@@ -42,8 +42,7 @@ const Time: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="text-center text-sm font-[Satoshi] flex items-center gap-2" style={{ color: "gray" }} >
-                        <img className="w-[10%] h-[12%]" src="/locat.svg" alt="Location Icon" loading="lazy" />
+                    <div className="text-center text-sm font-[Satoshi] flex items-center gap-2" style={{ color: "gray" }}>
                         Patna, India
                         <div className="gap-3">{timeIST}</div>
                     </div>

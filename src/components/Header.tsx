@@ -4,9 +4,7 @@ import { useState } from "react";
 import Model from "./3d";
 import { NavItem } from "@/components/NavItem";
 import { Home, User2, Grid2x2, ImageIcon } from "lucide-react";
-import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
 
 interface NavItemProps {
   href: string
@@ -33,14 +31,15 @@ export default function Header() {
         <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex">
           <nav
             aria-label="Main"
-            className="pointer-events-auto rounded-full border border-border/60 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm"
+            className="pointer-events-auto rounded-full bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 scale-90"
+            style={{ boxShadow: '0 0 20px rgba(255, 255, 55, 0.2), 0 0 40px rgba(255, 255, 255, 0.1)' }}
           >
-            <ul className="flex items-center gap-1 px-3 py-2">
+            <ul className="flex items-center gap-1 px-2 py-1.5">
               <NavItem href="/" label="Home" icon={Home} active={pathname === "/"} />
 
               {/* vertical divider */}
               <li aria-hidden="true">
-                <div className="mx-2 h-6 w-px bg-border/60" />
+                <div className="mx-2 h-6 w-px bg-border/60 bg-amber-50" />
               </li>
 
               <NavItem href="/about" label="About" icon={User2} active={pathname === "/about"} />
@@ -83,7 +82,7 @@ export default function Header() {
               <img src="/linkedin.svg" alt="LinkedIn" className="w-8 h-8" />
             </a>
             <a href="https://www.x.com/in/realShorya/" target="_blank" rel="noopener noreferrer">
-              <img src="/bi_twitter-x.svg" alt="X" className="w-8 h-8" />
+              <img src="/bi_twitter-x.svg" alt="X" className="w-7 h-8" />
             </a>
           </div>
         </div>
