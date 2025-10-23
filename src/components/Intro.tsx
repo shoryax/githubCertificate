@@ -1,4 +1,9 @@
-export default function Intro() {
+interface IntroProps {
+  activeTab: 'projects' | 'techstack';
+  setActiveTab: (tab: 'projects' | 'techstack') => void;
+}
+
+export default function Intro({ activeTab, setActiveTab }: IntroProps) {
   return (
     <div id="home" className="px-3 sm:px-8 lg:px-20 mx-auto">
       <div className="absolute top-0 left-0 w-[200px] h-[300px] pointer-events-none z-0 bg-gradient-to-br from-white-500 via-gray-400 to-transparent blur-[200px] opacity-40 rounded-full" />
@@ -34,17 +39,31 @@ export default function Intro() {
         </div>
       </div>
 
-      <div className="flex mx-5 flex-col sm:flex-row sm:space-x-7 my-8 mb-2 px-32 text-gray-400 text-sm sm:text-base">
-        <div>Projects</div>
+      <div className="flex mx-5 flex-row sm:space-x-7 my-8 mb-2 px-32 text-gray-400 text-sm sm:text-base">
+        <button
+          onClick={() => setActiveTab('projects')}
+          className={`px-3 py-1 rounded-md transition-colors duration-200 ${
+            activeTab === 'projects' ? 'text-white font-semibold' : 'hover:text-white'
+          }`}
+        >
+          Projects
+        </button>
 
-        <div className="flex items-center space-x-2 mt-2 sm:mt-0">
+        <button
+          onClick={() => setActiveTab('techstack')}
+          className={`flex items-center space-x-2 px-3 py-1 rounded-md transition-colors duration-200 ${
+            activeTab === 'techstack' ? 'text-white font-semibold' : 'hover:text-white'
+          }`}
+        >
           <span>Tech Stack</span>
-          <span className="w-1 h-1 rounded-full bg-blue-300 animate-ping"></span>
-        </div>
+          {activeTab === 'techstack' && (
+            <span className="w-1 h-1 rounded-full bg-blue-300 animate-ping"></span>
+          )}
+        </button>
       </div>
 
       <hr
-        className="mx-auto my-2 w-[78%] h-[0.250px] bg-[#343643] border-0"
+        className="mx-auto my-2 w-[80%] h-[0.250px] bg-[#343643] border-0"
       />
     </div>
   );

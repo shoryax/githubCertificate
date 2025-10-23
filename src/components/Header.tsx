@@ -28,13 +28,16 @@ export default function Header() {
           Shorya
         </div>
 
-        <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex">
+        <div className="absolute left-1/2 transform -translate-x-1/2 hidden text-gray-100/90 md:flex">
           <nav
             aria-label="Main"
-            className="pointer-events-auto rounded-full bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 scale-90"
-            style={{ boxShadow: '0 0 20px rgba(255, 255, 55, 0.2), 0 0 40px rgba(255, 255, 255, 0.1)' }}
+            className="pointer-events-auto rounded-full backdrop-blur scale-90"
+            style={{ 
+              boxShadow: '0 0 20px rgba(255, 255, 55, 0.2), 0 0 40px rgba(255, 255, 255, 0.1)',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)'
+            }}
           >
-            <ul className="flex items-center gap-1 px-2 py-1.5">
+            <ul className="flex items-center gap-1 px-2 bg-transparent py-1.5">
               <NavItem href="/" label="Home" icon={Home} active={pathname === "/"} />
 
               {/* vertical divider */}
