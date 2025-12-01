@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const extractTimeIST = (): string => {
     const now = new Date();
@@ -38,7 +39,7 @@ const Time: React.FC = () => {
 
                     <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex">
                         <div className="w-[70%] h-[70%]">
-                            <img src="/star.svg" alt="" loading="lazy" />
+                            <Image src="/star.svg" alt="star" width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} />
                         </div>
                     </div>
 

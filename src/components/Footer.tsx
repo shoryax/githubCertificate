@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
         <hr
           className="mx-auto my-2 w-[71%] h-[0.650px] bg-[#343643] border-0"
         />
-        <div className="text-center font-semibold text-xl mb-2 my-4 text-white/70">Let's get in touch</div>
+        <div className="text-center font-semibold text-xl mb-2 my-4 text-white/70">Let&apos;s get in touch</div>
 
         <div className="text-center text-sm text-[#BABABA] w-[75%] mx-auto mb-4">
           Feel free to send me a message using the form

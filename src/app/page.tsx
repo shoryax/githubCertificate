@@ -7,9 +7,17 @@ import Body from "@/components/Body";
 import Footer from '@/components/Footer';
 import Time from '@/components/Time';
 
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  image?: string;
+  link?: string;
+}
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState<'projects' | 'techstack'>('projects');
-  const [projects, setProjects] = useState<any[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
     fetch('/api/projects')

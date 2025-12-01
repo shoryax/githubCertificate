@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface IntroProps {
   activeTab: 'projects' | 'techstack';
   setActiveTab: (tab: 'projects' | 'techstack') => void;
@@ -11,12 +13,12 @@ export default function Intro({ activeTab, setActiveTab }: IntroProps) {
         <div className="text-4xl sm:text-5xl mb-4">🤭</div>
 
         <div className="text-gray-500 text-sm sm:text-base mb-3">
-          Hola, I'm{' '}
+          Hola, I&apos;m{' '}
           <span className="text-white/70 font-medium">Shorya</span> — developer, designer, and a lil bit of a creator.
         </div>
 
         <div className="text-gray-500 w-full text-sm sm:text-base">
-          I'm currently a{' '}
+          I&apos;m currently a{' '}
           <span className="text-white/70 font-medium">Computer Science</span> student
           <div>
             and building{' '}
@@ -29,13 +31,13 @@ export default function Intro({ activeTab, setActiveTab }: IntroProps) {
         {/* Contact Button */}
         <div className="flex items-center cursor-pointer text-[#5AAAFF] hover:text-[#4794e0] transition-colors duration-200">
           Contact
-          <img src="/arr.svg" alt="arrow" className="ml-2 w-4 h-4" />
+          <Image src="/arr.svg" alt="arrow" width={16} height={16} className="ml-2 w-4 h-4" />
         </div>
 
         {/* View Resume Button */}
         <div className="flex items-center cursor-pointer text-[#BABABA] hover:text-[#9f9f9f] transition-colors duration-200">
           View Resume
-          <img src="/arrow-up-right.svg" alt="arrow" className="ml-2 w-4 h-4" />
+          <Image src="/arrow-up-right.svg" alt="arrow" width={16} height={16} className="ml-2 w-4 h-4" />
         </div>
       </div>
 

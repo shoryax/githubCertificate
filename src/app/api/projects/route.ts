@@ -9,7 +9,7 @@ export async function GET() {
     const data = JSON.parse(jsonData);
     
     return NextResponse.json(data);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to load projects' }, { status: 500 });
   }
 }

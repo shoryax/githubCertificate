@@ -4,7 +4,6 @@ import fs from 'fs/promises';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Header from '@/components/Header';
-import Time from '@/components/Time';
 import Link from 'next/link';
 
 interface Project {
@@ -36,8 +35,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params }: { params: { id: string } }) {
-  const project = await getProject(params.id);
+export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const project = await getProject(id);
 
   if (!project) return notFound();
 
@@ -49,7 +49,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
 
         <Link href="/">
           <div className='text-white/60 flex'>
-            <img src="/arrow-left.svg" className="my-1 w-4 h-4 mx-1"></img>Go back
+            <Image src="/arrow-left.svg" alt="back" width={16} height={16} className="my-1 w-4 h-4 mx-1" />Go back
           </div>
         </Link>
 
@@ -63,8 +63,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
                 className="inline-flex items-center text-white/80"
               >
                 Visit Project
-                <img src="arrow-up-right.svg" className="w-4 h-4">
-                </img>
+                <Image src="/arrow-up-right.svg" alt="visit" width={16} height={16} className="w-4 h-4 ml-1" />
               </a>
             )}
           </div>
