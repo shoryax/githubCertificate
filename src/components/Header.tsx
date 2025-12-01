@@ -45,9 +45,9 @@ export default function Header() {
                 <div className="mx-2 h-6 w-px bg-border/60 bg-amber-50" />
               </li>
 
-              <NavItem href="/about" label="About" icon={User2} active={pathname === "/about"} />
-              <NavItem href="/work" label="Work" icon={Grid2x2} active={pathname === "/work"} />
-              <NavItem href="/gallery" label="Gallery" icon={ImageIcon} active={pathname === "/gallery"} />
+              <NavItem href="/" label="About" icon={User2} active={pathname === "/about"} />
+              <NavItem href="/" label="Work" icon={Grid2x2} active={pathname === "/work"} />
+              <NavItem href="/" label="Gallery" icon={ImageIcon} active={pathname === "/gallery"} />
             </ul>
           </nav>
         </div>

@@ -12,6 +12,7 @@ interface Project {
   title: string;
   description: string;
   image?: string;
+  githubLink?: string;
   link?: string;
   tech: string;
 }
@@ -71,7 +72,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
           {/* code portion */}
           <div className="flex gap-2 text-[#255152]">
             <a
-              href={project.link}
+              href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2"
