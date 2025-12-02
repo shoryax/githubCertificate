@@ -9,7 +9,7 @@ export default function Intro({ activeTab, setActiveTab }: IntroProps) {
   return (
     <div id="home" className="px-3 sm:px-8 lg:px-20 mx-auto">
       <div className="absolute top-0 left-0 w-[200px] h-[300px] pointer-events-none z-0 bg-gradient-to-br from-white-500 via-gray-400 to-transparent blur-[200px] opacity-40 rounded-full" />
-      <div className="sm:max-w-3xl rounded px-32 mx-5">
+      <div className="sm:max-w-3xl rounded intro-padding mx-2 sm:mx-5">
         <div className="text-4xl sm:text-5xl mb-4">🤭</div>
 
         <div className="text-gray-500 text-sm sm:text-base mb-3">
@@ -27,7 +27,7 @@ export default function Intro({ activeTab, setActiveTab }: IntroProps) {
         </div>
       </div>
 
-      <div className="flex flex-col mx-5 sm:flex-row items-start sm:items-center mt-10 space-y-4 sm:space-y-0 px-32 sm:space-x-10">
+      <div className="flex flex-col mx-2 sm:mx-5 sm:flex-row items-start sm:items-center mt-6 sm:mt-10 space-y-4 sm:space-y-0 intro-padding sm:space-x-10">
         {/* Contact Button */}
         <div className="flex items-center cursor-pointer text-[#5AAAFF] hover:text-[#4794e0] transition-colors duration-200">
           Contact
@@ -41,7 +41,7 @@ export default function Intro({ activeTab, setActiveTab }: IntroProps) {
         </div>
       </div>
 
-      <div className="flex mx-5 flex-row sm:space-x-7 my-8 mb-2 px-32 text-gray-400 text-sm sm:text-base">
+      <div className="flex mx-2 sm:mx-5 flex-row space-x-2 sm:space-x-7 my-6 sm:my-8 mb-2 intro-padding text-gray-400 text-sm sm:text-base">
         <button
           onClick={() => setActiveTab('projects')}
           className={`px-3 py-1 rounded-md transition-colors duration-200 ${

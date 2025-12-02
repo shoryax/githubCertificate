@@ -20,3 +20,109 @@ body {
   color: var(--foreground);
   font-family: Satoshi, Helvetica, sans-serif;
 }
+
+/* ===== Responsive Container Widths ===== */
+.container-responsive {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    width: 75%;
+  }
+}
+
+/* ===== Project Card Responsive ===== */
+.project-card {
+  width: 100%;
+  height: auto;
+  min-height: 320px;
+}
+
+@media (min-width: 640px) {
+  .project-card {
+    width: 280px;
+    height: 360px;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-card {
+    width: 300px;
+    height: 360px;
+  }
+}
+
+/* ===== Intro Section Responsive Padding ===== */
+.intro-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .intro-padding {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .intro-padding {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+
+/* ===== Projects Grid Responsive ===== */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .projects-grid {
+    gap: 1.25rem;
+    padding: 0 1.5rem;
+  }
+}
+
+/* ===== Tech Stack Pills Responsive ===== */
+.tech-pill {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .tech-pill {
+    padding: 0.75rem 1.25rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* ===== Link Text Responsive ===== */
+.link-text {
+  margin-left: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .link-text {
+    margin-left: 3rem;
+  }
+}

@@ -16,14 +16,14 @@ interface BodyProps {
 
 export default function Body({ activeTab, projects }: BodyProps) {
   return (
-    <div className="w-[75%] mx-auto">
+    <div className="container-responsive">
       {activeTab === 'projects' ? (
-        <div className="flex gap-x-5 gap-y-1 px-6 mx-auto justify-center flex-wrap">
+        <div className="projects-grid">
           {projects.map((project) => (
             <Link href={`/project/${project.id}`} key={project.id}>
               <div
                 data-layer="full r1"
-                className="FullR1 w-78 h-90 bg-[#080810] rounded-[10px] hover:cursor-pointer m-2"
+                className="project-card bg-[#080810] rounded-[10px] hover:cursor-pointer p-2"
               >
                 <Image
                   src={project.image || '/dining.jpeg'}
@@ -60,21 +60,21 @@ export default function Body({ activeTab, projects }: BodyProps) {
                     width={16}
                     height={16}
                   />
-                  <span className="text-white/60 text-xs font-normal ml-12 my-1">Learn more</span>
+                  <span className="text-white/60 text-xs font-normal link-text my-1">Learn more</span>
                 </div>
               </div>
             </Link>
           ))}
         </div>
       ) : (
-        <div className="flex flex-wrap gap-4 justify-center items-center py-10">
-          <span className="bg-[#222] text-blue-300 px-5 py-3 rounded-full text-lg font-semibold">Next.js</span>
-          <span className="bg-[#222] text-pink-300 px-5 py-3 rounded-full text-lg font-semibold">Figma</span>
-          <span className="bg-[#222] text-green-300 px-5 py-3 rounded-full text-lg font-semibold">React</span>
-          <span className="bg-[#222] text-yellow-300 px-5 py-3 rounded-full text-lg font-semibold">TypeScript</span>
-          <span className="bg-[#222] text-cyan-300 px-5 py-3 rounded-full text-lg font-semibold">Tailwind CSS</span>
-          <span className="bg-[#222] text-purple-300 px-5 py-3 rounded-full text-lg font-semibold">Node.js</span>
-          <span className="bg-[#222] text-orange-300 px-5 py-3 rounded-full text-lg font-semibold">JavaScript</span>
+        <div className="flex flex-wrap gap-2 sm:gap-4 justify-center items-center py-6 sm:py-10">
+          <span className="bg-[#222] text-blue-300 tech-pill rounded-full font-semibold">Next.js</span>
+          <span className="bg-[#222] text-pink-300 tech-pill rounded-full font-semibold">Figma</span>
+          <span className="bg-[#222] text-green-300 tech-pill rounded-full font-semibold">React</span>
+          <span className="bg-[#222] text-yellow-300 tech-pill rounded-full font-semibold">TypeScript</span>
+          <span className="bg-[#222] text-cyan-300 tech-pill rounded-full font-semibold">Tailwind CSS</span>
+          <span className="bg-[#222] text-purple-300 tech-pill rounded-full font-semibold">Node.js</span>
+          <span className="bg-[#222] text-orange-300 tech-pill rounded-full font-semibold">JavaScript</span>
         </div>
       )}
     </div>
