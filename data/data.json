@@ -2,12 +2,11 @@
     "allProjects": [
         {
             "id": "1",
-            "title": "Cards for Mental Health",
-            "description": "A supportive space offering guided activities, reflections, and gentle routines to build healthier mental habits each day. Tracks your progress and focuses on personal growth.",
-            "link": "https://mentalhealth-zeta-two.vercel.app",
-            "githubLink": "https://github.com/shoryax/mentalHealth.git",
-            "image": "/mentalHealth.png",
-            "tech": "figma, next-js, github copilot"
+            "title": "MindEase",
+            "description": "MindEase is a modern Next.js web application that serves as a digital wellness companion for mental health support, featuring mymentalhealthpal AI therapist, guided mindfulness activities, and personal wellness tracking dashboards. The platform integrates an AI-powered therapist for intelligent mental health guidance along with therapeutic tools like CBT exercises, breathing pacers, and mood gardens to help users on their mental wellness journey.","link": "https://mindeasee3.vercel.app/",
+            "githubLink": "https://github.com/shoryax/mindEase.git",
+            "image": "/mindEase.png",
+            "tech": "figma, next-js, claude max, cohere, supabase"
         },
         {
             "id": "2",
@@ -20,21 +19,21 @@
         },
         {
             "id": "3",
-            "title": "Fake News Detector",
-            "description": "High-precision fake-news classification leveraging Cohere's state-of-the-art NLP stack. Exposes a structured Flask endpoint for credibility scoring and semantic forensics.",
+            "title": "Glossy Deals",
+            "description": "A price-comparison engine for Korean skincare, aggregating 20,000+ products from 5 major retailers using Puppeteer scrapers.",
             "link": "https://news-ten-fake.vercel.app",
             "githubLink": "https://github.com/shoryax/fakeNews.git",
             "image": "/fake.png",
-            "tech": "figma, next-js, cohere api, flask"
+            "tech": "figma, next-js, cohere, supabase"
         },
         {
             "id": "4",
-            "title": "Recify",
-            "description": "A manual song search engine that allows users to find song based on their choics using Spotify's API",
-            "link": "https://recify.vercel.app",
-            "githubLink": "https://github.com/shoryax/recify.git",
-            "image": "/recify.png",
-            "tech": "figma, next-js"
+            "title": "ResuPro",
+            "description": "ResuPro creates stunning professional resumés and cover letters in seconds using AI.",
+            "link": "https://resupro.space",
+            "githubLink": "https://github.com/shoryax/resuPro.git",
+            "image": "/resuPro.png",
+            "tech": "figma, next-js, anthropic, razorpay, supabase"
         }
     ]
 }

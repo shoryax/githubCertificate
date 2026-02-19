@@ -1,10 +1,9 @@
-// app/project/[id]/page.tsx
-import path from 'path';
-import fs from 'fs/promises';
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Header from '@/components/Header';
-import Link from 'next/link';
+import path from "path";
+import fs from "fs/promises";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import Header from "@/components/Header";
 
 interface Project {
   id: string;
@@ -17,99 +16,158 @@ interface Project {
 }
 
 async function getProject(id: string): Promise<Project | null> {
-  const filePath = path.join(process.cwd(), 'data', 'data.json');
-  const jsonData = await fs.readFile(filePath, 'utf-8');
+  const filePath = path.join(process.cwd(), "data", "data.json");
+  const jsonData = await fs.readFile(filePath, "utf-8");
   const data = JSON.parse(jsonData);
-
-  return data.allProjects.find((proj: Project) => proj.id === id) || null;
+  return data.allProjects.find((p: Project) => p.id === id) || null;
 }
 
-// Static params for pre-rendering
 export async function generateStaticParams() {
-  const filePath = path.join(process.cwd(), 'data', 'data.json');
-  const jsonData = await fs.readFile(filePath, 'utf-8');
+  const filePath = path.join(process.cwd(), "data", "data.json");
+  const jsonData = await fs.readFile(filePath, "utf-8");
   const data = JSON.parse(jsonData);
-
-  return data.allProjects.map((proj: Project) => ({
-    id: proj.id,
-  }));
+  return data.allProjects.map((p: Project) => ({ id: p.id }));
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
   const project = await getProject(id);
-
   if (!project) return notFound();
 
   return (
-    <div>
+    <div
+      style={{
+        background: "#000",
+        minHeight: "100vh",
+        color: "rgba(255,255,255,0.82)",
+      }}
+    >
       <Header />
-      <div className="absolute top-0 left-0 w-[200px] h-[300px] pointer-events-none z-0 bg-gradient-to-br from-white-500 via-gray-400 to-transparent blur-[200px] opacity-60 rounded-full" />
-      <div className="max-w-6xl mx-auto p-6">
 
-        <Link href="/">
-          <div className='text-white/60 flex'>
-            <Image src="/arrow-left.svg" alt="back" width={16} height={16} className="my-1 w-4 h-4 mx-1" />Go back
-          </div>
-        </Link>
+      <div
+        style={{
+          maxWidth: "860px",
+          margin: "0 auto",
+          padding: "7rem 2.5rem 6rem",
+        }}
+      >
+        {/* Top meta row */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "3rem",
+            paddingBottom: "1.5rem",
+            borderBottom: "1px solid rgba(255,255,255,0.06)",
+          }}
+        >
+          <Link href="/" className="project-back-link">
+            ← All Projects
+          </Link>
 
-        <div className="bg-blue/60 w-[100%] h-[10%] flex justify-end gap-5 text-sm">
-          <div className='flex gap-2'>
-            {project.link && (
+          <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+            {project.link && !project.link.startsWith("on your") && (
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-white/80"
+                style={{
+                  fontSize: "13px",
+                  color: "rgba(255,255,255,0.55)",
+                  textDecoration: "none",
+                  letterSpacing: "0.02em",
+                  transition: "color 0.2s ease",
+                }}
               >
-                Visit Project
-                <Image src="/arrow-up-right.svg" alt="visit" width={16} height={16} className="w-4 h-4 ml-1" />
+                Live ↗
+              </a>
+            )}
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: "13px",
+                  color: "rgba(255,255,255,0.55)",
+                  textDecoration: "none",
+                  letterSpacing: "0.02em",
+                  transition: "color 0.2s ease",
+                }}
+              >
+                Code ↗
               </a>
             )}
           </div>
-
-          {/* code portion */}
-          <div className="flex gap-2 text-[#255152]">
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2"
-            >
-              View Code
-            </a>
-          </div>
-
         </div>
 
-        <h1 className="text-3xl font-bold text-white mb-4">{project.title}</h1>
+        {/* Project title */}
+        <h1
+          style={{
+            fontSize: "clamp(2.5rem, 6vw, 5rem)",
+            fontWeight: 500,
+            letterSpacing: "-0.025em",
+            lineHeight: 1.05,
+            color: "rgba(255,255,255,0.9)",
+            marginBottom: "1.5rem",
+          }}
+        >
+          {project.title}
+        </h1>
 
-        <div className='w-100 h-10'>
-          {project.tech.split(',').map((item, index) => (
-            <span
-              key={index}
-              className="inline-block px-3 py-1 mr-2 mb-2 text-sm rounded border border-gray-700"
-            >
-              {item.trim()}
+        {/* Tech tags */}
+        <div style={{ marginBottom: "2.5rem" }}>
+          {project.tech.split(",").map((t, i) => (
+            <span key={i} className="project-tag">
+              {t.trim()}
             </span>
           ))}
         </div>
 
-        
+        {/* Description */}
         {project.description && (
-          <p className="text-sm text-white/60 mb-4">{project.description}</p>
+          <p
+            style={{
+              fontSize: "1rem",
+              color: "rgba(255,255,255,0.45)",
+              lineHeight: 1.75,
+              maxWidth: "580px",
+              marginBottom: "3.5rem",
+            }}
+          >
+            {project.description}
+          </p>
         )}
+
+        {/* Project image */}
         {project.image && (
-          <Image
-            src={project.image}
-            alt={project.title}
-            width={1200}
-            height={500}
-            className="rounded-lg mb-6 object-cover"
-          />
+          <div
+            style={{
+              borderRadius: "4px",
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.06)",
+            }}
+          >
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={860}
+              height={480}
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                objectFit: "cover",
+              }}
+            />
+          </div>
         )}
       </div>
-      {/* <Time></Time> */}
     </div>
   );
 }
