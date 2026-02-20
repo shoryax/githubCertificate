@@ -3,8 +3,8 @@ import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "I'm me, bitch!!",
+  title: "portfolio website",
+  description: "It's me, Bitch.",
 };
 
 export default function RootLayout({
