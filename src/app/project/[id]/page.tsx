@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 interface Project {
   id: string;
   title: string;
+  notes?: string;
   description: string;
   image?: string;
   githubLink?: string;
@@ -118,6 +119,25 @@ export default async function ProjectPage({
           }}
         >
           {project.title}
+          <div>
+            {project.notes && (
+                <span
+                    style={{
+                        fontSize: "0.75rem",
+                        backgroundColor: "rgba(255,255,255,0.3)",
+                        padding: "0.15rem 0.5rem",
+                        borderRadius: "4px",
+                        color: "rgba(255,255,255,0.45)",
+                        fontWeight: 500,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.02em",
+                        marginLeft: "0.75rem",
+                    }}
+                >
+                  {project.notes}
+                </span>
+            )}
+          </div>
         </h1>
 
         {/* Tech tags */}

@@ -3,6 +3,7 @@
         {
             "id": "1",
             "title": "MindEase",
+            "notes": "active",
             "description": "MindEase is a modern Next.js web application that serves as a digital wellness companion for mental health support, featuring mymentalhealthpal AI therapist, guided mindfulness activities, and personal wellness tracking dashboards. The platform integrates an AI-powered therapist for intelligent mental health guidance along with therapeutic tools like CBT exercises, breathing pacers, and mood gardens to help users on their mental wellness journey.",
             "link": "https://mindeasee3.vercel.app/",
             "githubLink": "https://github.com/shoryax/mindEase.git",
@@ -12,6 +13,7 @@
         {
             "id": "2",
             "title": "ASL Recognition",
+            "notes": "inactive",
             "description": "This ASL detection model is built on MobileNetV2, pretrained on ImageNet and fine-tuned on an ASL dataset, optimized for mobile performance, making it ideal for Snap AR.",
             "link": "no_link",
             "githubLink": "https://github.com/shoryax/ASL-recognition.git",
@@ -21,6 +23,7 @@
         {
             "id": "3",
             "title": "Glossy Deals",
+            "notes": "inactive",
             "description": "A price-comparison engine for Korean skincare, aggregating 20,000+ products from 5 major retailers using Puppeteer scrapers.",
             "link": "no_link",
             "githubLink": "https://github.com/shoryax/glossyDeals.git",
@@ -30,6 +33,7 @@
         {
             "id": "4",
             "title": "ResuPro",
+            "notes": "active",
             "description": "ResuPro creates stunning professional resumés and cover letters in seconds using AI.",
             "link": "https://resupro.space",
             "githubLink": "https://github.com/shoryax/resuPro.git",
