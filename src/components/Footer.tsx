@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="text-center text-sm text-[#BABABA] w-[75%] mx-auto mb-4">
           Feel free to send me a message using the form
           <p></p>or email me at{" "}
-          <span className="text-[#346444] font-medium">shoryavardhan13@gmail.com</span>
+          <span className="text-[#346444] font-medium">shoryavardhan7@gmail.com</span>
         </div>
 
         <form className="w-full max-w-xl mx-auto space-y-4 px-4">
