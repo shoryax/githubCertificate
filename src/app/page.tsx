@@ -278,7 +278,7 @@ export default function Home() {
               Get in touch
             </p>
             <a
-              href="mailto:shoryavardhan7@gmail.com"
+              href="mailto:shorya1x@gmail.com"
               style={{
                 fontSize: "clamp(1.1rem, 2.5vw, 2rem)",
                 color: "rgba(255,255,255,0.82)",
@@ -288,7 +288,7 @@ export default function Home() {
                 transition: "color 0.2s ease",
               }}
             >
-              shoryavardhan7@gmail.com
+              shorya1x@gmail.com
             </a>
           </div>
           
