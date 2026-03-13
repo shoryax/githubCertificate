@@ -292,9 +292,8 @@ export default function Home() {
               shoryavardhan7@gmail.com
             </a>
           </div>
-
-
-
+          
+          {/* Right: social links */}
           <div
             style={{
               display: "flex",
