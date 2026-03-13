@@ -293,7 +293,8 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Right: social links */}
+
+
           <div
             style={{
               display: "flex",
