@@ -26,7 +26,6 @@ export default function Home() {
   return (
     <main style={{ background: "#000", minHeight: "100vh", cursor: "none" }}>
 
-      {/* ── Fixed: corner nav ────────────────────────────────── */}
       {/* Top-left: identity */}
       <div
         style={{
